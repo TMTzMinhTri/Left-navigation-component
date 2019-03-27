@@ -9,7 +9,7 @@ class listItem extends React.Component {
             item: ''
         }
     }
-    handleClick =() => {
+    handleClick =(item) => {
         item.edit = !item.edit;
     }
     didupdate = (Update) => {
