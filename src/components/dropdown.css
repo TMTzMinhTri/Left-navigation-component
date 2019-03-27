@@ -64,6 +64,7 @@
     z-index: 1;
     width: 100%;
     transition: background-color 200ms ease;
+    background-color: #f4f6f8;
 }
 
 .partial-menu-left .next-nav-menu-left {
@@ -143,7 +144,9 @@
     padding-left: 25px;
     padding-right: 25px;
 }
-
+.nav-left .next-nav-item .next-nav-text.p-0{
+    padding: 0;
+}
 .nav-left .next-nav-item .next-nav-link:hover .next-nav-text, .nav-left .next-nav-item .next-nav-link:hover .next-nav-item--icon, .nav-left .next-nav-item .next-nav-link:hover .next-nav-item--icon-arrow, .nav-left .next-nav-item .next-nav-link.active .next-nav-text, .nav-left .next-nav-item .next-nav-link.active .next-nav-item--icon, .nav-left .next-nav-item .next-nav-link.active .next-nav-item--icon-arrow {
     color: #0279C7;
 }

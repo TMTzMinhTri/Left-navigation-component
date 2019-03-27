@@ -8,12 +8,16 @@ import './App.css';
 // import ListItem from './components/listItem'
 import PartialMenuLeft from './components/dropDownMenu'
 
-class App extends Component {
-  constructor(props) {
+
+// interface
+import {IMenu} from './components/dropDownMenu'
+
+class App extends Component<any, any>{
+  constructor(props: any) {
     super(props)
     this.state = {
       value: [
-        { title: "Giao tiếp nội bộ", typeIcon: 'IC',theme:'regular', child: null, reload:true, link: "/giao-tiep-noi-bo"},
+        { title: "Giao tiếp nội bộ", typeIcon: 'IC',theme:'regular',count:10, reload:true, link: "/giao-tiep-noi-bo"},
         {
           title: "Công việc",link:'/cong-viec', typeIcon: 'Tasks',theme:'regular', child: [
             {
@@ -31,7 +35,7 @@ class App extends Component {
           ],reload: false, 
         },
         { title: "Phiếu yêu cầu", typeIcon: 'EF',theme:'regular', child:[], reload: false, link: '/phieu-yeu-cau' },
-        { title: "Quản trị ngân sách", typeIcon: 'Channel',theme:'regular',reload:false, link: '/quan-tri-ngan-sach' },
+        { title: "Quản trị ngân sách", reload:false, link: '/quan-tri-ngan-sach' },
         {
           title: "Profile",link:'/profile', typeIcon: 'Tasks',theme:'regular', child: [
             {
@@ -51,7 +55,7 @@ class App extends Component {
         { title: "Nhân sự", typeIcon: 'HR',theme:'solid' , reload:true, link:'/nhan-su'},
         { title: "Cấu hình", typeIcon: 'settings',theme:'solid', reload: false, link:'/cau-hinh' },
         {
-          title: "Product",link:'/product', typeIcon: 'Tasks',theme:'regular', child: [
+          title: "Product",link:'/product', typeIcon: 'Channel',theme:'regular', child: [
             {
               title: 'Công việc',
               link:'/product/cong-viec'
@@ -66,7 +70,7 @@ class App extends Component {
             }
           ],reload: false, 
         },
-      ]
+      ] as IMenu[]
     }
   }
   render() {
