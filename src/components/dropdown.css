@@ -125,7 +125,7 @@
 
 .nav-left .next-nav-item .next-nav-link .next-nav-item--icon {
     position: absolute;
-    left: 15px;
+    left: 20px;
     top: 0;
     color: #9CA7B2;
 }
@@ -177,9 +177,15 @@
     padding: 0 0 0 25px;
 }
 
-.nav-left .next-nav-item .next-nav-link.open+.next-nav-dropdown, .nav-left .next-nav-item .hrv-collapse.hrv-collapse-borderless>.hrv-collapse-item .hrv-collapse-content>.hrv-collapse-content-box .next-nav-dropdown {
+.nav-left .next-nav-item .next-nav-link.open+.next-nav-dropdown, 
+.nav-left .next-nav-item .hrv-collapse.hrv-collapse-borderless>.hrv-collapse-item 
+.hrv-collapse-content>.hrv-collapse-content-box .next-nav-dropdown {
     display: block;
 }
+.nav-left .next-nav-item .next-nav-link.open .hrv-svg-inline-block{
+    transform: rotate(90deg);
+}
+
 
 /* Profile */
 

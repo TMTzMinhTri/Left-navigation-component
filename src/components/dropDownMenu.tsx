@@ -36,16 +36,23 @@ export default class PartialMenuLeft extends React.Component<Iprops, any> {
                                 <div className='next-nav-item--icon'><HrvComponents.Icon type={item.typeIcon} size={16} /></div>
                                 <span className={item.typeIcon ? 'next-nav-text' : 'next-nav-text p-0'}>{item.title}</span>
                                 <div>
-                                    {item.count ? <HrvComponents.Badges status='default' content={item.count} className='mr-1'></HrvComponents.Badges> : null}
+                                    {item.count && item.count > 0 ? <HrvComponents.Badges status='default' content={item.count} className='mr-1'></HrvComponents.Badges> : null}
                                     <HrvComponents.Icon size={8} type='arrow' />
+                                    {item.actions && item.actions() ? <HrvComponents.Icon size={10} type='dotThree' /> : null}
                                 </div>
                             </a>)
                             : (<NavLink to={item.link} className='next-nav-link' activeClassName="open">
                                 <div className='next-nav-item--icon'><HrvComponents.Icon type={item.typeIcon} size={16} theme={item.theme} /></div>
                                 <span className={item.typeIcon ? 'next-nav-text' : 'next-nav-text p-0'}>{item.title}</span>
                                 <div>
-                                    {item.count ? <HrvComponents.Badges status='default' content={item.count} className='mr-1'></HrvComponents.Badges> : null}
+                                    {item.count && item.count > 0 ? <HrvComponents.Badges status='default' content={item.count} className='mr-1'></HrvComponents.Badges> : null}
                                     <HrvComponents.Icon size={8} type='arrow' />
+                                    {item.actions && item.actions()
+                                        ?
+                                        <HrvComponents.Popover content={item.actions} title='Title'>
+                                            <HrvComponents.Icon size={10} type='dotThree' />
+                                        </HrvComponents.Popover>
+                                        : null}
                                 </div>
                             </NavLink>)}
                         <ul className='next-nav-dropdown'>
@@ -58,15 +65,24 @@ export default class PartialMenuLeft extends React.Component<Iprops, any> {
                         ? <a href={item.link} className='next-nav-link '>
                             <div className='next-nav-item--icon'><HrvComponents.Icon type={item.typeIcon} size={16} /></div>
                             <span className={item.typeIcon ? 'next-nav-text' : 'next-nav-text p-0'}>{item.title}</span>
-                            <div>{item.count ? <HrvComponents.Badges status='default' content={item.count} className='mr-1'></HrvComponents.Badges> : null}</div>
+                            <div>
+                                {item.count && item.count > 0 ? <HrvComponents.Badges status='default' content={item.count} className='mr-1'></HrvComponents.Badges> : null}
+                                {item.actions && item.actions() ? <HrvComponents.Icon size={10} type='dotThree' /> : null}
+                            </div>
                         </a>
                         : <div>
                             <NavLink exact to={item.link} className='next-nav-link'>
                                 <div className='next-nav-item--icon'><HrvComponents.Icon type={item.typeIcon} theme={item.theme} size={16} /></div>
                                 <span className={item.typeIcon ? 'next-nav-text' : 'next-nav-text p-0'}>{item.title} - test</span>
-                                <div>{item.count ? <HrvComponents.Badges status='default' content={item.count} className='mr-1'></HrvComponents.Badges> : null}</div>
+                                <div>
+                                    {item.count && item.count > 0 ? <HrvComponents.Badges status='default' content={item.count} className='mr-1'></HrvComponents.Badges> : null}
+                                    {item.actions && item.actions()
+                                        ? <HrvComponents.Popover content={item.actions && item.actions()} title='Title'>
+                                            <HrvComponents.Icon size={10} type='dotThree' />
+                                        </HrvComponents.Popover>
+                                        : null}
+                                </div>
                             </NavLink>
-                            {item.actions && item.actions()}
                         </div>
                 }
             </li>
