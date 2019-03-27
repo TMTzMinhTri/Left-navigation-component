@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Children } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -17,20 +17,27 @@ class App extends Component<any, any>{
     super(props)
     this.state = {
       value: [
-        { title: "Giao tiếp nội bộ", typeIcon: 'IC',theme:'regular',count:10, reload:true, link: "/giao-tiep-noi-bo"},
+        { title: "Giao tiếp nội bộ", typeIcon: 'IC',theme:'regular',count:10, reload:false, link: "/giao-tiep-noi-bo"},
         {
           title: "Công việc",link:'/cong-viec', typeIcon: 'Tasks',theme:'regular', child: [
             {
               title: 'Công việc',
-              link:'/cong-viec/cong-viec'
+              link:'/cong-viec/cong-viec',
+              typeIcon:'EF'
             },
             {
               title: 'Triển khai',
-              link:'/cong-viec/trien-khai'
+              link:'/cong-viec/trien-khai',
             },
             {
               title: 'Chấm điểm',
-              link:'/cong-viec/cham-diem'
+              link:'/cong-viec/cham-diem',
+              child : [
+                {title:'điểm Toán', link: '/cong-viec/cham-diem/toan', typeIcon :'pencil', theme:'solid',count:10},
+                {title:'điểm văn', link: '/cong-viec/cham-diem/van',count:10},
+                {title:'điểm lý', link: '/cong-viec/cham-diem/ly',typeIcon :'pencil', theme:'solid'},
+                {title:'điểm hoá', link: '/cong-viec/cham-diem/hoa'}
+              ]
             }
           ],reload: false, 
         },
@@ -55,7 +62,7 @@ class App extends Component<any, any>{
         { title: "Nhân sự", typeIcon: 'HR',theme:'solid' , reload:true, link:'/nhan-su'},
         { title: "Cấu hình", typeIcon: 'settings',theme:'solid', reload: false, link:'/cau-hinh' },
         {
-          title: "Product",link:'/product', typeIcon: 'Channel',theme:'regular', child: [
+          title: "Product",link:'/product', typeIcon: 'Channel',theme:'regular',count:10, child: [
             {
               title: 'Công việc',
               link:'/product/cong-viec'
@@ -72,6 +79,16 @@ class App extends Component<any, any>{
         },
       ] as IMenu[]
     }
+  }
+
+  renderAction = () => {
+    return <div>
+      <div className="">...</div>
+      <div className=''>
+        menu 1
+        menu 2
+      </div>
+    </div>
   }
   render() {
     let {value} = this.state;
