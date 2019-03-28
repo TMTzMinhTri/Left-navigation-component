@@ -1,16 +1,13 @@
 import React, { Component, Children } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-// import {MyContext} from './context/myContext'
-// import DataProvider from './context/myContext'
-
-// import ListItem from './components/listItem'
-import PartialMenuLeft from './components/dropDownMenu'
+import PartialMenuLeft from './components/sideMenu/dropDownMenu';
+import Logo from './components/sideMenu/logo'
+import Profile from './components/sideMenu/profile'
 
 
 // interface
-import { IMenu } from './components/dropDownMenu'
+import { IMenu } from './components/sideMenu/dropDownMenu'
 
 class App extends Component<any, any>{
   constructor(props: any) {
@@ -85,38 +82,23 @@ class App extends Component<any, any>{
     return (
       <div className=''>
         <ul>
-          <li>
-            menu 1
-          </li>
-          <li>
-            menu 2
-          </li>
+          <li>menu 1</li>
+          <li>menu 2</li>
         </ul>
       </div>
     )
   }
+
+
+  renderProfile = () => {
+    return <Profile />
+  }
+
   render() {
     let { value } = this.state;
     return (
-      // <DataProvider>
-      //   <div className="App">
-      //     <input type = 'text' ref = {this.inputElement} onChange = {(e) => this.setState({value: e.target.value})}/>
-      //     <MyContext.Consumer>
-      //     {
-      //       ({Add}) => (
-
-      //         <button onClick ={() => Add(this.state.value)}>Add data</button>
-      //       )
-      //     }
-      //   </MyContext.Consumer>
-      //     <ol>
-      //       <ListItem />
-      //     </ol>
-      //   </div>
-
-      // </DataProvider>
-      <div className='App1'>
-        <PartialMenuLeft value={value} />
+      <div className="ui-layout-mobile">
+        <PartialMenuLeft value={value} profile={this.renderProfile()} />
       </div>
     );
   }
