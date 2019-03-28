@@ -104,7 +104,7 @@
     justify-content: center;
 }
 .nav-left .primary-button-partial-left-menu button {
-    width: calc(100% - 30px);
+    width: calc(100% - 40px);
 }
 .nav-left ul .next-nav-item {
     position: relative;
@@ -118,7 +118,7 @@
     justify-content: space-between;
     letter-spacing: initial;
     color: #474747;
-    padding: 0 15px 0 20px;
+    padding: 0 20px 0 20px;
     height: 36px;
     display: flex;
     background-color: transparent;
@@ -128,7 +128,12 @@
     text-decoration: none;
     position: relative;
 }
-
+.nav-left .next-nav-item .next-nav-link div span svg {
+    color: #9CA7B2
+}
+.nav-left > .primary-button-add {
+    padding: 20px 0 10px 0;
+}
 .nav-left .next-nav-item .next-nav-link .next-nav-item--icon {
     position: absolute;
     left: 20px;
@@ -157,8 +162,20 @@
 .nav-left .next-nav-item .next-nav-text.p-0{
     padding: 0;
 }
-.nav-left .next-nav-item .next-nav-link:hover .next-nav-text, .nav-left .next-nav-item .next-nav-link:hover .next-nav-item--icon, .nav-left .next-nav-item .next-nav-link:hover .next-nav-item--icon-arrow, .nav-left .next-nav-item .next-nav-link.active .next-nav-text, .nav-left .next-nav-item .next-nav-link.active .next-nav-item--icon, .nav-left .next-nav-item .next-nav-link.active .next-nav-item--icon-arrow {
-    color: #0279C7;
+.nav-left .next-nav-item .next-nav-link:hover .next-nav-text,
+.nav-left .next-nav-item .next-nav-link:hover .next-nav-item--icon, 
+.nav-left .next-nav-item .next-nav-link:hover .next-nav-item--icon-arrow, 
+.nav-left .next-nav-item .next-nav-link.active .next-nav-text, 
+.nav-left .next-nav-item .next-nav-link.active .next-nav-item--icon, 
+.nav-left .next-nav-item .next-nav-link.active .next-nav-item--icon-arrow {
+    color: #21469B;
+}
+.nav-left .next-nav-item .next-nav-link.active .next-nav-text, 
+.nav-left .next-nav-item .next-nav-link.active .next-nav-item--icon, 
+.nav-left .next-nav-item .next-nav-link.active .next-nav-item--icon-arrow{
+    font-size: 14px;
+    font-weight: bold;
+
 }
 
 .nav-left .next-nav-item .hrv-collapse {
@@ -310,6 +327,11 @@
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
+        justify-content: space-between;
+    }
+    .ui-aside .ui-header--logo a{
+        color: #fff;
+        cursor: pointer;
     }
     .ui-aside .aside-profile, .ui-aside-closer {
         display: block;
@@ -319,7 +341,7 @@
 
 
 .ui-header--profile-container {
-    padding: 0 15px;
+    padding: 0 20px;
     height: 50px;
     display: -webkit-box;
     display: -webkit-flex;

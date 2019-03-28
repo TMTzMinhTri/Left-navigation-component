@@ -1,13 +1,13 @@
-import React, { Component, Children } from 'react';
+import React, { Component} from 'react';
 import './App.css';
 
-import PartialMenuLeft from './components/sideMenu/dropDownMenu';
-import Logo from './components/sideMenu/logo'
-import Profile from './components/sideMenu/profile'
+import PartialMenuLeft from './components/sideMenu';
+// import Logo from './components/logo'
+import Profile from './profile'
 
 
 // interface
-import { IMenu } from './components/sideMenu/dropDownMenu'
+import { IMenu } from './components/sideMenu'
 
 class App extends Component<any, any>{
   constructor(props: any) {
